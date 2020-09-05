@@ -1,0 +1,179 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Font
+@font-face {
+  font-family: "Monaco";
+  src: url("../monaco.ttf-master/monaco.ttf");
+}
+
+body {
+  background-color: #fafafa;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .title {
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4em;
+    }
+  }
+}
+
+@keyframes addModalAnimation {
+  0% {
+    transform: scale(.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.add-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba($color: #000000, $alpha: .7);
+  
+  justify-content: center;
+  align-items: center;
+  
+  .fa-times-circle {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    font-size: 2.3em;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  form {
+    animation: .5s addModalAnimation;
+    background-color: #fafafa;
+    width: 95%;
+    max-width: 700px;
+    padding: 1em;
+    border-radius: .4em;
+    input {
+      width: 100%;
+      display: block;
+      margin-bottom: 1.5em;
+      font-size: 1em;
+      padding: 1em;
+      border-radius: .4em;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+      &.title {
+        background-color: #ffffff;
+        border: 3px solid #eeeeee;
+        &:focus {
+          border-color: dodgerblue;
+        }
+      }
+      &#file {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        display: none;
+        overflow: hidden;
+      }
+    }
+    .file-label {
+      width: 100%;
+      display: block;
+      margin-bottom: 1.5em;
+      font-size: 1em;
+      padding: 1em;
+      border-radius: .4em;
+      background-color: #eeeeee;
+      border: 3px solid #eeeeee;
+      font-family: 'Poppins', sans-serif;
+      &:hover {
+        border-color: #dddddd;
+        background-color: #dddddd;
+        cursor: pointer;
+      }
+    }
+    .add-button {
+      padding: 1em;
+      background-color: dodgerblue;
+      color: #ffffff;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      border-radius: .3em;
+      font-weight: 700;
+      &:hover {
+        cursor: pointer;
+        background-color: #0080ff;
+      }
+    }
+  }
+}
+main {
+  .main-container {
+    height: calc(100vh - 60px);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      width: 200px;
+      height: 200px;
+      
+      text-decoration: none;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      background-color: #f5f5f5;
+      
+      transition: .5s all;
+      border-radius: 10%;
+
+      @keyframes myAnimation {
+        0% {
+          transform: scale(.5);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      &:hover {
+        border-radius: 50%;
+        background-color: #eeeeee;
+      }
+      
+      &:hover .fa-plus {
+        animation: .5s myAnimation;
+        color: #808080;
+      }
+      .fa-plus {
+        transition: .5s all;
+        font-size: 3.2em;
+        color: #adadad;
+      }
+    }
+  }
+}

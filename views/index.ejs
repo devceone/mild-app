@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icon Fonts -->
+  <script src="https://kit.fontawesome.com/292ca1c646.js" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/statics/css/index.css">
+  <title>App</title>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>App</h1>
+    </div>
+  </header>
+  <div id="add-modal" class="add-modal">
+    <i class="far fa-times-circle"></i>
+    <form action="/add" method="POST" enctype="multipart/form-data">
+
+      <input type="text" name="title" class="title">
+
+      <label for="file" class="file-label">Open a File</label>
+
+      <input type="file" id="file" name="file">
+
+      <button type="submit" class="add-button">Send Data</button>
+    </form>
+  </div>
+  <main>
+    <div class="main-container">
+      <a href="#" id="show-add-modal"><i class="fas fa-plus"></i></a>
+    </div>
+  </main>
+
+  <script src="/statics/js/index.js"></script>
+</body>
+</html>

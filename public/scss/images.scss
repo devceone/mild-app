@@ -1,0 +1,94 @@
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Font
+@font-face {
+  font-family: "Monaco";
+  src: url("../monaco.ttf-master/monaco.ttf");
+}
+
+body {
+  background-color: #fafafa;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ .title {
+   h1 {
+     font-size: 1.4em;
+   }
+ } 
+}
+
+main {
+  margin-top: 120px;
+  .main-container {
+    text-align: center;
+    width: 95%;
+    max-width: 700px;
+    margin: 0 auto;
+    .posts {
+      .post {
+        border: 1px solid #eeeeee;
+        background-color: #ffffff;
+        border-radius: .6em;
+        overflow: hidden;
+        margin-bottom: 4em;
+        position: relative;
+        .title {
+          text-align: center;
+          padding: 1em;
+        }
+        .delete {
+          text-decoration: none;
+          color: #ffffff;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: .5em;
+          display: inline-block;
+          background-color: red;
+          border-radius: .4em;
+          font-size: .8em;
+          font-family: 'Poppins', sans-serif;
+        }
+        .image-container {
+          background-color: #eeeeee;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .load-more-data {
+      text-decoration: none;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      padding: 1em;
+      background-color: dodgerblue;
+      display: inline-block;
+      border-radius: .3em;
+      margin-bottom: 3em;
+    }
+  }
+}
